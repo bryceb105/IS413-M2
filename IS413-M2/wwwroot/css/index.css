@@ -1,0 +1,13 @@
+﻿body {
+}
+
+img { /*Set border*/
+    max-width: 20%;
+    height: auto;
+    border: 2px solid;
+}
+
+label{ /*set input boxes in-line*/
+    width:150px;
+    display: inline-block
+}

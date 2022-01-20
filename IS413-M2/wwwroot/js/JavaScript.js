@@ -5,7 +5,7 @@ $("#btnSend").click(function () {
     /*calculate grade*/
     gCalc = ((parseFloat($('#gAssignment').val()) * .55) + (parseFloat($('#gGroup').val()) * .05) + (parseFloat($('#gQuiz').val()) * .1) + (parseFloat($('#gExam').val()) * .2) + (parseFloat($('#gIntex').val()) * .1));
 
-/*    calculate letter grade*/
+    /*calculate letter grade*/
     if (gCalc >= 94) {
         gGrade = "A"
     } else if (gCalc >= 90) {
@@ -32,5 +32,10 @@ $("#btnSend").click(function () {
         gGrade = "E"
     }
 
-    alert("Percentage Grade: " + gCalc.toFixed(2) + "\nLetter Grade: " + gGrade)
+    sessionStorage.setItem("Output", ("Percentage Grade: " + gCalc.toFixed(2) + "\nLetter Grade: " + gGrade));
 })
+
+window.onload = function () {
+    $("#newOutput").html(sessionStorage.getItem("Output"));
+    sessionStorage.clear()
+}

@@ -32,10 +32,7 @@ $("#btnSend").click(function () {
         gGrade = "E"
     }
 
-    sessionStorage.setItem("Output", ("Percentage Grade: " + gCalc.toFixed(2) + "\nLetter Grade: " + gGrade));
-})
+    alert("Percentage Grade: " + gCalc.toFixed(2) + "\nLetter Grade: " + gGrade);
+    document.getElementById('form').submit();
 
-window.onload = function () {
-    $("#newOutput").html(sessionStorage.getItem("Output"));
-    sessionStorage.clear()
-}
+})
